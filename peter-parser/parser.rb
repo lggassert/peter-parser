@@ -13,6 +13,18 @@ module PeterParser
             PeterParser::Components::Or.new(*args, &block)
         end
         
+        def self.job(*args, &block)
+            PeterParser::Components::LazyEvaluator.new(*args, &block)
+        end
+        
+        def self.url(*args, &block)
+            PeterParser::Components::LazyEvaluator.new('url', *args, &block)
+        end
+        
+        def self.part(*args, &block)
+            PeterParser::Components::LazyEvaluator.new('partial', *args, &block)
+        end
+        
         class << self
             alias_method :x, :xpath
         end

@@ -12,9 +12,11 @@ module PeterParser
             end
             
             def _extract(job)
-                @rules.map{|rule|
-                    rule.extract(job)
-                }.inject(&:merge)
+                res = {}
+                @rules.each{|rule|
+                    res.merge!(rule.extract(job.merge({'partial' => res})))
+                }
+                return res
             end
         end
     end

@@ -4,14 +4,18 @@ module PeterParser
             def _extract(job)
                 return self.map{|rule|
                     rule.extract(job)
-                }
+                }.compact
             end
         end
         
         module Hash
             def _extract(job)
                 return Object::Hash[self.map{|field, rule|
-                    [field, rule.extract(job)]
+                    res = rule.extract(job)
+                    [field, res] if res and (
+                        (not res.respond_to?('empty?')) or 
+                        (not res.empty?)
+                    )
                 }]
             end
         end
