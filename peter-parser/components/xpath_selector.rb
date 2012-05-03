@@ -13,7 +13,7 @@ module PeterParser
                 if @index.class == Range
                     res.map{|el| el.content}
                 else
-                    res.content
+                    res.content if res
                 end
             end
         end

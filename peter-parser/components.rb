@@ -46,3 +46,4 @@ end
 
 require_relative './components/xpath_selector.rb'
 require_relative './components/ruleset.rb'
+require_relative './components/or.rb'

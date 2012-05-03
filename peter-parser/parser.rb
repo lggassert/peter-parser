@@ -9,6 +9,10 @@ module PeterParser
             PeterParser::Components::Ruleset.new(*args, &block)
         end
         
+        def self.or_(*args, &block)
+            PeterParser::Components::Or.new(*args, &block)
+        end
+        
         class << self
             alias_method :x, :xpath
         end
