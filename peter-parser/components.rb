@@ -14,15 +14,13 @@ module PeterParser
                 @postprocess.push(block) if block
                 return self
             end
-        end
-    
-        module IterableComponent
-            include Component
         
             def iter(&block)
                 @postprocess = [] if not @postprocess
-                iter = PeterParser::PostProcess::Iterator.get_iter(&block)
-                @postprocess.push(iter) if block
+                if block
+                    iter = PeterParser::PostProcess::Iterator.get_iter(&block)
+                    @postprocess.push(iter)
+                end
                 return self
             end
         end
@@ -39,5 +37,3 @@ end
 
 require_relative './components/xpath_selector.rb'
 require_relative './components/ruleset.rb'
-
-require_relative './components/objects.rb'

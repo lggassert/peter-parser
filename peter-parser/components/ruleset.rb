@@ -3,18 +3,19 @@ module PeterParser
         class Ruleset
             include Component
         
-            def initialize(rules)
+            def initialize(*rules, &block)
                 @rules = rules
+                pproc(&block)
             end
             
-            def self.[](rules)
-                return Ruleset.new(rules)
+            def self.[](*rules, &block)
+                return Ruleset.new(*rules, &block)
             end
             
             def _extract(job)
-                Hash[@rules.map{|field, rule|
-                    f_v = [field, PeterParser::Components.extract(rule, job)]
-                }]
+                @rules.map{|rule|
+                    rule.extract(job)
+                }.inject(&:merge)
             end
         end
     end

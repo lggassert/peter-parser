@@ -5,7 +5,9 @@ module PeterParser
             return PeterParser::Components::XPathSelector.new(xpath, index, &postprocess)
         end
     
-        R = PeterParser::Components::Ruleset
+        def self.R(*args, &block)
+            PeterParser::Components::Ruleset.new(*args, &block)
+        end
         
         class << self
             alias_method :x, :xpath
