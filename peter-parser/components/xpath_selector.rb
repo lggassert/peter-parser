@@ -6,7 +6,6 @@ module PeterParser
             def initialize(selector, index=0..-1, &block)
                 @selector = selector
                 @index = index
-                @postprocess = []
                 iter(&block)
             end
             
