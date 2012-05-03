@@ -18,8 +18,6 @@ module PeterParser
             @job['data'] = fetch_data(@job['url'])
             @job['data'] = @job['data'].force_encoding(@page_encoding) if @page_encoding
             @job['doc'] = mount_doc(@job['data'])
-            
-            puts @job['doc'].class
                         
             return nil
         end
