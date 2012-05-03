@@ -1,12 +1,11 @@
 module PeterParser
     module Components
         class XPathSelector
-            include Component
+            include NonNativeComponent
         
-            def initialize(selector, index=0..-1, &block)
+            def _init(selector, index=0..-1, &block)
                 @selector = selector
                 @index = index
-                pproc(&block)
             end
             
             def _extract(job)

@@ -24,6 +24,15 @@ module PeterParser
                 return self
             end
         end
+        
+        module NonNativeComponent
+            include Component
+            
+            def initialize(*args, &block)
+                _init(*args, &block)
+                pproc(&block)
+            end
+        end
     
         def self.extract(obj, job)
             if obj.respond_to?(:extract)

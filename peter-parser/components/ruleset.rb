@@ -1,11 +1,10 @@
 module PeterParser
     module Components
         class Ruleset
-            include Component
+            include NonNativeComponent
         
-            def initialize(*rules, &block)
+            def _init(*rules, &block)
                 @rules = rules
-                pproc(&block)
             end
             
             def self.[](*rules, &block)
