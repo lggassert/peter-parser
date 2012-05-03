@@ -1,2 +1,2 @@
 #!/bin/bash
-rvm use 1.9.2@peter-parser
+rvm use 1.9.2
