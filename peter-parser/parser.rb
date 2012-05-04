@@ -21,7 +21,7 @@ module PeterParser
             PeterParser::Components::LazyEvaluator.new('url', *args, &block)
         end
         
-        def self.part(*args, &block)
+        def self.partial(*args, &block)
             PeterParser::Components::LazyEvaluator.new('partial', *args, &block)
         end
         
@@ -58,10 +58,12 @@ module PeterParser
         end
         
         def fetch_data(url)
+            require 'restclient'
             return RestClient.get(url)
         end
         
         def mount_doc(data)
+            require 'nokogiri'
             return Nokogiri::HTML(data)
         end
         
