@@ -3,7 +3,13 @@ module PeterParser
         class Ruleset
             include NonNativeComponent
         
-            def _init(*rules, &block)
+            def _init(first, *rules, &block)
+                if first.class == Class
+                    @res_class = first
+                else
+                    @res_class = nil
+                    rules.unshift(first)
+                end
                 @rules = rules
             end
             
@@ -12,9 +18,16 @@ module PeterParser
             end
             
             def _extract(job)
-                res = {}
+                res = @res_class.new if @res_class
                 @rules.each{|rule|
-                    res.merge!(rule.extract(job.merge({'partial' => res})))
+                    part = rule.extract(job.merge({'partial' => res}))
+                    if not @res_class
+                        @res_class = part.class
+                        res = @res_class.new
+                    elsif part.class != @res_class
+                        part = @res_class.new(part)
+                    end
+                    res = res + part
                 }
                 return res
             end

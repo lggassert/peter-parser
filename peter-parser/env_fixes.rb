@@ -9,6 +9,10 @@ module PeterParser
         end
         
         module Hash
+            def +(a_hash)
+                return self.merge(a_hash)
+            end
+        
             def _extract(job)
                 return Object::Hash[self.map{|field, rule|
                     res = rule.extract(job)

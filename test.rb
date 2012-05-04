@@ -26,7 +26,7 @@ class TestParser < PeterParser::Parser
         },
         {
             'songs_per_band' => part{|part| part['songs'].size * 1.0/part['bands'].size},
-            '2nd song' => part('songs', 1),
+            '2nd song' => part['songs'][1],
         },
     )
 end

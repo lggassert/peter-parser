@@ -17,6 +17,13 @@ module PeterParser
                 }
                 return str
             end
+            
+            def [](idx, &block)
+                access = Proc.new{|j| j[idx]}
+                pproc(&access)
+                pproc(&block)
+                return self
+            end
         end
     end
 end
