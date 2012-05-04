@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require './peter-parser'
+require_relative './peter-parser'
 require 'pp'
 
 class TestParser < PeterParser::Parser
@@ -26,8 +26,8 @@ class TestParser < PeterParser::Parser
             'url' => url,
         },
         {
-            'songs_per_band' => part{|part| part['songs'].size * 1.0/part['bands'].size},
-            '2nd song' => part['songs'][1],
+            'songs_per_band' => partial{|part| part['songs'].size * 1.0/part['bands'].size},
+            '2nd song' => partial['songs'][1],
         },
     )
 end
