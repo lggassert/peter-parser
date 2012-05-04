@@ -3,11 +3,11 @@ require './peter-parser'
 
 class TestParser < PeterParser::Parser
     include PeterParser::XMLParser
-    include PeterParser::LocalFile
+    #include PeterParser::LocalFile
 
     @default_job = {
-        'url' => 'http://ws.audioscrobbler.com/1.0/user/lggassert/recenttracks.rss',
         'url' => './test.xml',
+        'url' => 'http://ws.audioscrobbler.com/1.0/user/lggassert/recenttracks.rss',
     }
     
     @extractor = R(
@@ -26,7 +26,7 @@ class TestParser < PeterParser::Parser
         },
         {
             'songs_per_band' => part{|part| part['songs'].size * 1.0/part['bands'].size},
-            '2nd song' => part('songs', 1),
+            '2nd song' => part['songs'][2],
         },
     )
 end
