@@ -16,10 +16,7 @@ module PeterParser
             def _extract(job)
                 return Object::Hash[self.map{|field, rule|
                     res = rule.extract(job)
-                    [field, res] if res and (
-                        (not res.respond_to?('empty?')) or 
-                        (not res.empty?)
-                    )
+                    [field, res]
                 }]
             end
         end
