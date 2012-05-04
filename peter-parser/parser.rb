@@ -21,7 +21,7 @@ module PeterParser
             PeterParser::Components::LazyEvaluator.new('url', *args, &block)
         end
         
-        def self.part(*args, &block)
+        def self.partial(*args, &block)
             PeterParser::Components::LazyEvaluator.new('partial', *args, &block)
         end
         
