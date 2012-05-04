@@ -58,10 +58,12 @@ module PeterParser
         end
         
         def fetch_data(url)
+            require 'restclient'
             return RestClient.get(url)
         end
         
         def mount_doc(data)
+            require 'nokogiri'
             return Nokogiri::HTML(data)
         end
         

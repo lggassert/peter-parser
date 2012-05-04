@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 require './peter-parser'
+require 'pp'
 
 class TestParser < PeterParser::Parser
     include PeterParser::XMLParser
     #include PeterParser::LocalFile
 
     @default_job = {
-        'url' => './test.xml',
+        #'url' => './test.xml',
         'url' => 'http://ws.audioscrobbler.com/1.0/user/lggassert/recenttracks.rss',
     }
     
@@ -26,11 +27,11 @@ class TestParser < PeterParser::Parser
         },
         {
             'songs_per_band' => part{|part| part['songs'].size * 1.0/part['bands'].size},
-            '2nd song' => part['songs'][2],
+            '2nd song' => part['songs'][1],
         },
     )
 end
 
 if __FILE__ == $0
-    puts TestParser.run
+    pp TestParser.run
 end

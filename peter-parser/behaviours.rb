@@ -1,6 +1,7 @@
 module PeterParser
     module XMLParser
         def mount_doc(data)
+            require 'nokogiri'
             return Nokogiri::XML(data)
         end 
     end
