@@ -25,7 +25,7 @@ module PeterParser
                         @res_class = part.class
                         res = @res_class.new
                     elsif part.class != @res_class
-                        part = @res_class.new(part)
+                        part = part.to(@res_class)._do_pp(part)
                     end
                     res = res + part
                 }
