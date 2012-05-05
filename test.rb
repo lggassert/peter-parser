@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 require_relative './peter-parser'
-require 'pp'
 
 class TestParser < PeterParser::Parser
     include PeterParser::XMLParser
@@ -26,12 +25,14 @@ class TestParser < PeterParser::Parser
             'url' => url,
         },
         {
-            'songs_per_band' => partial{|part| part['songs'].size * 1.0/part['bands'].size},
+            'songs_per_band' => partial{|part| part['songs'].size * 1.0/part['bands'].size}.to(String),
             '2nd song' => partial['songs'][1],
         },
+        [1, 2, 3, 4],
     )
 end
 
 if __FILE__ == $0
+    require 'pp'
     pp TestParser.run
 end
