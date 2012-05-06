@@ -1,15 +1,15 @@
 # -*- encoding: utf-8 -*-
-require_relative './peter-parser'
+require 'peter_parser'
 
 class TestParser < PeterParser::Parser
     include PeterParser::XMLParser
     #include PeterParser::LocalFile
 
     @default_job = {
-        #'url' => './test.xml',
+        #'url' => './assets/test.xml',
         'url' => 'http://ws.audioscrobbler.com/1.0/user/lggassert/recenttracks.rss',
     }
-    
+
     @extractor = R(
         {
             'a_number' => 222,
@@ -20,7 +20,7 @@ class TestParser < PeterParser::Parser
             'some_info' => R({
                 'version' => x("/rss/@version", 0),
             }),
-            'source' => 'last.fm',            
+            'source' => 'last.fm',
             'or' => or_(x("//language", 1), "a"),
             'url' => url,
         },

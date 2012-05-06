@@ -1,8 +1,4 @@
-source 'http://rubygems.org'
+source "http://rubygems.org"
 
-gem 'nokogiri', '~>1.5.0'
-gem 'rest-client', '~>1.6.7'
-gem 'resque', '~>1.20'
-
-gem 'rake', '0.9.2'
-
+# Specify your gem's dependencies in lolcats.gemspec
+gemspec
