@@ -5,7 +5,7 @@ module PeterParser
                 @postprocess = [] if not @postprocess
                 return true
             end
-            
+
             def _do_pp(res)
                 _init_comp()
                 @postprocess.each{|proc|
@@ -13,13 +13,13 @@ module PeterParser
                 }
                 return res
             end
-        
+
             def extract(job)
                 res = _extract(job)
                 res = _do_pp(res)
                 return res
             end
-            
+
             def pp_push(&block)
                 _init_comp()
                 if block
@@ -28,7 +28,7 @@ module PeterParser
                 end
                 return false
             end
-            
+
             def pproc(&block)
                 if block
                     block = PeterParser::PostProcess::Block.get(&block)
@@ -36,7 +36,7 @@ module PeterParser
                 end
                 return self
             end
-        
+
             def iter(&block)
                 if block
                     iter = PeterParser::PostProcess::Iterator.get(&block)
@@ -44,7 +44,7 @@ module PeterParser
                 end
                 return self
             end
-            
+
             def to(*args, &block)
                 args.each{ |descriptor|
                     if self.class == Array and descriptor == Hash
@@ -63,10 +63,10 @@ module PeterParser
                 return self
             end
         end
-        
+
         module NonNativeComponent
             include Component
-            
+
             def initialize(*args, &block)
                 _init(*args, &block)
                 pproc(&block)
@@ -75,7 +75,7 @@ module PeterParser
     end
 end
 
-require_relative './components/xpath_selector.rb'
-require_relative './components/ruleset.rb'
-require_relative './components/or.rb'
-require_relative './components/lazy_evaluator.rb'
+require 'peter_parser/components/xpath_selector.rb'
+require 'peter_parser/components/ruleset.rb'
+require 'peter_parser/components/or.rb'
+require 'peter_parser/components/lazy_evaluator.rb'
