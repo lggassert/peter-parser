@@ -6,7 +6,7 @@ class TestParser < PeterParser::Parser
     #include PeterParser::LocalFile
 
     @default_job = {
-        #'url' => './assets/test.xml',
+        #'url' => './test/assets/test.xml',
         'url' => 'http://ws.audioscrobbler.com/1.0/user/lggassert/recenttracks.rss',
     }
 
@@ -34,5 +34,6 @@ end
 
 if __FILE__ == $0
     require 'pp'
+    pp TestParser.run
     pp TestParser.run
 end
