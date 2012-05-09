@@ -18,11 +18,11 @@ module PeterParser
         end
         
         def self.url(*args, &block)
-            PeterParser::Components::LazyEvaluator.new('url', *args, &block)
+            job('url', *args, &block)
         end
         
         def self.partial(*args, &block)
-            PeterParser::Components::LazyEvaluator.new('partial', *args, &block)
+            job('partial', *args, &block)
         end
         
         class << self
@@ -53,7 +53,7 @@ module PeterParser
             @job['data'] = fetch_data(@job['url'])
             @job['data'] = @job['data'].force_encoding(@page_encoding) if get_definition(:@page_encoding)
             @job['doc'] = mount_doc(@job['data'])
-                        
+            
             return nil
         end
         
