@@ -1,5 +1,8 @@
 module PeterParser
-    class Parser      
+    class Parser
+        include PeterParser::HTMLParser
+        include PeterParser::NetworkFile
+        
         # LOTS OF DEFINITIONS FOR MAKING LIFE EASIER
         def self.xpath(xpath, index=(0..-1), &postprocess)
             return PeterParser::Components::XPathSelector.new(xpath, index, &postprocess)
@@ -55,16 +58,6 @@ module PeterParser
             @job['doc'] = mount_doc(@job['data'])
             
             return nil
-        end
-        
-        def fetch_data(url)
-            require 'restclient'
-            return RestClient.get(url)
-        end
-        
-        def mount_doc(data)
-            require 'nokogiri'
-            return Nokogiri::HTML(data)
         end
         
         def call_hook(name)
