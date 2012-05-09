@@ -3,24 +3,22 @@ module PeterParser
         class LazyEvaluator
             include NonNativeComponent
             
-            def _init(*idx, &block)
-                @idx = idx
+            def _init(*idxs, &block)
+                idxs.each{|idx|
+                    _lazy_access(idx)
+                }
             end
             
             def _extract(job)
-                idx = @idx.shift
-                return job if not idx
-                str = job[idx]
-                @idx.each{|idx|
-                    str = str[idx]
-                    break if not str
-                }
-                return str
+                return job
+            end
+            
+            def _lazy_access(idx)
+                pproc{|j| j[idx]}
             end
             
             def [](idx, &block)
-                access = Proc.new{|j| j[idx]}
-                pproc(&access)
+                _lazy_access(idx)
                 pproc(&block)
                 return self
             end
