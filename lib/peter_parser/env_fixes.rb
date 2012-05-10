@@ -37,4 +37,8 @@ module Kernel
     def extract(job={})
         return self
     end
+    
+    def handle(handler={})
+        return true
+    end
 end

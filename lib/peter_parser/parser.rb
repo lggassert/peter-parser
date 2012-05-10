@@ -47,9 +47,9 @@ module PeterParser
             call_hook(:pre_parse)
             @result = parse()
             call_hook(:post_parse)
-            handle()
+            handled = handle()
             
-            return @result
+            return handled
         end
         
         def prepare()
@@ -61,14 +61,23 @@ module PeterParser
             return nil
         end
         
+        def get_definition(var_name)
+            return self.class.instance_variable_get(var_name)
+        end
+        
         def call_hook(name)
             return send(name) if respond_to?(name)
             return nil
         end
         
         def parse()
-            extractor = self.class.instance_variable_get(:@extractor)
+            extractor = get_definition(:@extractor)
             return extractor.extract(@job)
+        end
+        
+        def handle()
+           @result.handle()
+           return @result
         end
     end
 end
