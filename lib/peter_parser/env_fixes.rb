@@ -39,6 +39,6 @@ module Kernel
     end
     
     def handle(handler={})
-        return true
+        return self
     end
 end
