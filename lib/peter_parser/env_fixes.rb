@@ -1,7 +1,7 @@
 module PeterParser
     module EnvFixes
         module Array
-            def _extract(job)
+            def do_extract(job)
                 return self.map{|rule|
                     rule.extract(job)
                 }.compact
@@ -13,7 +13,7 @@ module PeterParser
                 return self.merge(a_hash)
             end
         
-            def _extract(job)
+            def do_extract(job)
                 return Object::Hash[self.map{|field, rule|
                     res = rule.extract(job)
                     [field, res]
@@ -36,5 +36,9 @@ end
 module Kernel
     def extract(job={})
         return self
+    end
+    
+    def handle(handler={})
+        return true
     end
 end

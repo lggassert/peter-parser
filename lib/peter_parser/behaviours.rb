@@ -1,9 +1,23 @@
 module PeterParser
+    module HTMLParser
+        def mount_doc(data)
+            require 'nokogiri'
+            return Nokogiri::HTML(data)
+        end
+    end
+
     module XMLParser
         def mount_doc(data)
             require 'nokogiri'
             return Nokogiri::XML(data)
         end 
+    end
+    
+    module NetworkFile
+        def fetch_data(url)
+            require 'restclient'
+            return RestClient.get(url)
+        end
     end
     
     module LocalFile

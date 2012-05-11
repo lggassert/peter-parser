@@ -1,5 +1,8 @@
 module PeterParser
-    class Parser      
+    class Parser
+        include PeterParser::HTMLParser
+        include PeterParser::NetworkFile
+        
         # LOTS OF DEFINITIONS FOR MAKING LIFE EASIER
         def self.xpath(xpath, index=(0..-1), &postprocess)
             return PeterParser::Components::XPathSelector.new(xpath, index, &postprocess)
@@ -44,8 +47,9 @@ module PeterParser
             call_hook(:pre_parse)
             @result = parse()
             call_hook(:post_parse)
+            handled = handle()
             
-            return @result
+            return handled
         end
         
         def prepare()
@@ -57,14 +61,8 @@ module PeterParser
             return nil
         end
         
-        def fetch_data(url)
-            require 'restclient'
-            return RestClient.get(url)
-        end
-        
-        def mount_doc(data)
-            require 'nokogiri'
-            return Nokogiri::HTML(data)
+        def get_definition(var_name)
+            return self.class.instance_variable_get(var_name)
         end
         
         def call_hook(name)
@@ -73,11 +71,13 @@ module PeterParser
         end
         
         def parse()
-            return get_definition(:@extractor).extract(@job)
+            extractor = get_definition(:@extractor)
+            return extractor.extract(@job)
         end
         
-        def get_definition(var)
-            return self.class.instance_variable_get(var)
+        def handle()
+           @result.handle(get_definition(:@handler) || {})
+           return @result
         end
     end
 end

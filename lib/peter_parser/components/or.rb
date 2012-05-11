@@ -3,11 +3,11 @@ module PeterParser
         class Or
             include NonNativeComponent
             
-            def _init(*rules, &block)
+            def do_init(*rules, &block)
                 @rules = rules
             end
             
-            def _extract(job)
+            def do_extract(job)
                 @rules.each{|rule|
                     res = rule.extract(job)
                     return res if res and not res.empty?

@@ -3,12 +3,12 @@ module PeterParser
         class XPathSelector
             include NonNativeComponent
         
-            def _init(selector, index=0..-1, &block)
+            def do_init(selector, index=0..-1, &block)
                 @selector = selector
                 @index = index
             end
             
-            def _extract(job)
+            def do_extract(job)
                 res = job['doc'].xpath(@selector)[@index]
                 if @index.class == Range
                     res.map{|el| el.content}
