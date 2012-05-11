@@ -76,8 +76,7 @@ module PeterParser
         end
         
         def handle()
-           @result.handle(get_definition(:@handler) || {})
-           return @result
+           return @result.handle(get_definition(:@handler) || {})
         end
     end
 end
