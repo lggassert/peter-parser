@@ -3,13 +3,13 @@ module PeterParser
         class LazyEvaluator
             include NonNativeComponent
             
-            def _init(*idxs, &block)
+            def do_init(*idxs, &block)
                 idxs.each{|idx|
                     _lazy_access(idx)
                 }
             end
             
-            def _extract(job)
+            def do_extract(job)
                 return job
             end
             
