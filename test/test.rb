@@ -12,21 +12,21 @@ class TestParser < PeterParser::Parser
 
     @extractor = R(
         {
-            'a_number' => 222,
             'lang' => x("//language", 0),
             'songs' => x("//item/title").iter{|item| item.match(".* – (.*)")[-1]},
             'bands' => x("//item/title").iter{|item| item.match("(.*) – .*")[-1]}.pproc{|ar| ar.sort.uniq},
-            'something' => ['a', x("//language", 0),].iter{|a| a + " HAHAHA"},
-            'some_info' => R({
+            'iterate_array' => [1, 2,].iter{|a| a.to_s + " check"},
+            'info_ruleset' => R({
                 'version' => x("/rss/@version", 0),
             }),
+            'a_number' => 222.to('s'){|x| x + ' ok'},
             'source' => 'last.fm',
-            'or' => or_(x("//language", 1), "a"),
+            'or' => or_([], nil, "", {}, x("/wrongXpath"), "or is ok"),
             'url' => url,
         },
         {
-            'songs_per_band' => partial{|part| part['songs'].size * 1.0/part['bands'].size}.to(String),
             '2nd song' => partial['songs'][1],
+            '3rd song' => partial['songs'][2],
         },
         [1, 2, 3, 4],
     )

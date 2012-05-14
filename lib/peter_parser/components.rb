@@ -14,11 +14,7 @@ module PeterParser
                 return res
             end
 
-            def extract(job)
-                def do_extract(job)
-                    return nil
-                end
-            
+            def extract(job)            
                 res = do_extract(job)
                 res = _postprocess(res)
                 return res
@@ -55,6 +51,14 @@ module PeterParser
                     pp_push(&transform)
                 }
                 pproc(&block)
+                return self
+            end
+            
+            def do_extract(job)
+                return self
+            end
+            
+            def handle(handler={})
                 return self
             end
         end

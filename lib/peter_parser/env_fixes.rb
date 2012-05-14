@@ -23,22 +23,14 @@ module PeterParser
     end
 end
 
-class Array
+class Object
     include PeterParser::Components::Component
+end
+
+class Array
     include PeterParser::EnvFixes::Array
 end
 
 class Hash
-    include PeterParser::Components::Component
     include PeterParser::EnvFixes::Hash
-end
-
-module Kernel
-    def extract(job={})
-        return self
-    end
-    
-    def handle(handler={})
-        return self
-    end
 end
