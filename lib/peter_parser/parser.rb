@@ -55,13 +55,13 @@ module PeterParser
         def prepare()
             @job['url'] or raise NoURLOnJob, "Could not find an URL to parse on #{@job}"
             @job['data'] = fetch_data(@job['url'])
-            @job['data'] = @job['data'].force_encoding(@page_encoding) if get_definition(:@page_encoding)
+            @job['data'] = @job['data'].force_encoding(@page_encoding) if get_class_variable(:@page_encoding)
             @job['doc'] = mount_doc(@job['data'])
             
             return nil
         end
         
-        def get_definition(var_name)
+        def get_class_variable(var_name)
             return self.class.instance_variable_get(var_name)
         end
         
@@ -71,12 +71,12 @@ module PeterParser
         end
         
         def parse()
-            extractor = get_definition(:@extractor)
+            extractor = get_class_variable(:@extractor)
             return extractor.extract(@job)
         end
         
         def handle()
-           return @result.handle(get_definition(:@handler) || {})
+           return @result.handle(get_class_variable(:@handler) || {})
         end
     end
 end
