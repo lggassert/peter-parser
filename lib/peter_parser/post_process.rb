@@ -18,15 +18,17 @@ module PeterParser
         
         class Transformation < Block
             def self.get(origin, descriptor)
-                if origin.class == Array and descriptor == Hash
-                    transform = Proc.new{|ar| Hash[*ar]}
-                elsif descriptor == String
-                    transform = Proc.new{|this| String(this)}
-                elsif descriptor.class == Class
-                    transform = Proc.new{|this| descriptor.new(this)}
-                else
-                    transform = Proc.new{|this| this.send('to_' + String(descriptor))}
-                end
+                transform = Proc.new{|this|
+                    if this.class == Array and descriptor == Hash
+                        Hash[*this]
+                    elsif descriptor == String
+                        String(this)
+                    elsif descriptor.class == Class
+                        descriptor.new(this)
+                    else
+                        this.send('to_' + String(descriptor))
+                    end
+                }
                 return self.new(&transform)
             end
         end

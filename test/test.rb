@@ -3,11 +3,10 @@ require 'peter_parser'
 
 class TestParser < PeterParser::Parser
     include PeterParser::XMLParser
-    #include PeterParser::LocalFile
+    include PeterParser::LocalFile
 
     @default_job = {
-        #'url' => './test/assets/test.xml',
-        'url' => 'http://ws.audioscrobbler.com/1.0/user/lggassert/recenttracks.rss',
+        'url' => './test/assets/test.xml',
     }
 
     @extractor = R(

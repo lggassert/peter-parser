@@ -55,7 +55,10 @@ module PeterParser
         def prepare()
             @job['url'] or raise NoURLOnJob, "Could not find an URL to parse on #{@job}"
             @job['data'] = fetch_data(@job['url'])
-            @job['data'] = @job['data'].force_encoding(@page_encoding) if get_class_variable(:@page_encoding)
+            if (encoding = get_class_variable(:@page_encoding))
+                @job['data'] = @job['data'].force_encoding(encoding)
+                @job['data'].encode!('utf-8')
+            end
             @job['doc'] = mount_doc(@job['data'])
             
             return nil
@@ -65,9 +68,9 @@ module PeterParser
             return self.class.instance_variable_get(var_name)
         end
         
-        def call_hook(name)
-            return send(name) if respond_to?(name)
-            return nil
+        def call_hook(name, *args)
+            return send(name, *args) if respond_to?(name)
+            return true
         end
         
         def parse()
