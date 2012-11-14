@@ -1,8 +1,84 @@
-<rss version='2.0'>
-    <language>en</language>
-    <item>
-        <title>Beatles – Strawberry Fields Forever</title>
-        <title>Beatles – Revolution</title>
-        <title>Stars – Soft Revolution</title>
-    </item>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/rss.xsl" media="screen"?>
+<rss version="2.0" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">
+   <channel>
+      <language>en</language>
+      <creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/2.0/uk/</creativeCommons:license>
+            <pubDate>Tue, 19 Jun 2012 18:11:41 +0000</pubDate>
+      <lastBuildDate>Tue, 19 Jun 2012 18:11:41 +0000</lastBuildDate>
+            <ttl>5</ttl>
+      <docs>http://www.audioscrobbler.net/data/webservices</docs>      <title>lggassert's Recently Played Tracks</title>
+      <link>http://www.last.fm/user/lggassert</link>
+      <description>Last 10 tracks submitted to Last.fm</description>
+      <item>
+         <title>We Are Scientists – Break It Up</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/Break+It+Up</link>
+         <pubDate>Tue, 19 Jun 2012 18:15:37 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340129737</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>We Are Scientists – Ambition</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/Ambition</link>
+         <pubDate>Tue, 19 Jun 2012 18:11:41 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340129501</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>We Are Scientists – Pittsburgh</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/Pittsburgh</link>
+         <pubDate>Tue, 19 Jun 2012 18:06:35 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340129195</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>We Are Scientists – Jack &amp; Ginger</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/Jack+&amp;+Ginger</link>
+         <pubDate>Tue, 19 Jun 2012 18:03:13 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340128993</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>We Are Scientists – Nice Guys</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/Nice+Guys</link>
+         <pubDate>Tue, 19 Jun 2012 18:00:19 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340128819</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>We Are Scientists – I Don't Bite</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/I+Don't+Bite</link>
+         <pubDate>Tue, 19 Jun 2012 17:57:32 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340128652</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>We Are Scientists – Rules Don't Stop</title>
+         <link>http://www.last.fm/music/We+Are+Scientists/_/Rules+Don't+Stop</link>
+         <pubDate>Tue, 19 Jun 2012 17:55:16 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340128516</guid>
+                 <description>http://www.last.fm/music/We+Are+Scientists</description>
+      </item>
+      <item>
+         <title>Carly Rae Jepsen – Call Me Maybe</title>
+         <link>http://www.last.fm/music/Carly+Rae+Jepsen/_/Call+Me+Maybe</link>
+         <pubDate>Tue, 19 Jun 2012 17:49:42 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340128182</guid>
+                 <description>http://www.last.fm/music/Carly+Rae+Jepsen</description>
+      </item>
+      <item>
+         <title>One Direction – What Makes You Beautiful</title>
+         <link>http://www.last.fm/music/One+Direction/_/What+Makes+You+Beautiful</link>
+         <pubDate>Tue, 19 Jun 2012 17:45:08 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340127908</guid>
+                 <description>http://www.last.fm/music/One+Direction</description>
+      </item>
+      <item>
+         <title>Jet – Come Around Again</title>
+         <link>http://www.last.fm/music/Jet/_/Come+Around+Again</link>
+         <pubDate>Tue, 19 Jun 2012 17:18:17 +0000</pubDate>
+         <guid>http://www.last.fm/user/lggassert#1340126297</guid>
+                 <description>http://www.last.fm/music/Jet</description>
+      </item>
+   </channel>
 </rss>

@@ -47,7 +47,7 @@ module PeterParser
 
             def to(*args, &block)
                 args.each{ |descriptor|
-                    transform = PeterParser::PostProcess::Transformation.get(self, descriptor)
+                    transform = PeterParser::PostProcess::Transformation.get(descriptor)
                     pp_push(&transform)
                 }
                 pproc(&block)

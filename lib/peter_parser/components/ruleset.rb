@@ -25,7 +25,7 @@ module PeterParser
                         @res_class = part.class
                         res = @res_class.new
                     elsif part.class != @res_class
-                        block = PeterParser::PostProcess::Transformation.get(part, @res_class)
+                        block = PeterParser::PostProcess::Transformation.get(@res_class)
                         part = block.call(part)
                     end
                     res = res + part

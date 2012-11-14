@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<produto>
+	<!--	
+		 ***********  OBS: COLOCAR COR DO PRODUTO, TIPO DO PRODUTO, COLOCAR ALT DA IMAGEM      ************* 
+		  FOTO DO PRODUTO ( DOWNLOADS  ALTA E BAIXA )  NÃO EXISTA A OPÇÃO PARA ZIP DEIXAR O "CAMPO EM BRANCO "
+	  
+	  -->
+	<fotoProduto tipo="frigobar">
+		<fotosAdcionais cor="Branco">
+			<nomeProduto videoProduto="" tamanhoVideo="" P180="" tamanhoP180="" downloadIMGAlta="" tamanhoIMGAlta="" downloadIMGBaixa="" tamanhoIMGBaixa=""  descritivo="portafechada" alt="Fotos do produto" descAntiga="Frigobar Fit" downloadAlta="/download/produtos/frigobares/fit/zip/imagem-alta.zip" tamanhoAlta="1,10MB" downloadBaixa="/download/produtos/frigobares/fit/zip/imagem-baixa.zip" tamanhoBaixa="185KB" lamina="/produtos/frigobar/frigobar_fit/lamina/frigobar_fit.pdf" tamanhoLamina="387KB" />
+			<nomeProduto videoProduto="" tamanhoVideo="" P180="" tamanhoP180="" downloadIMGAlta="" tamanhoIMGAlta="" downloadIMGBaixa="" tamanhoIMGBaixa=""  descritivo="portaaberta" alt="Fotos do produto" descAntiga="Frigobar Fit" downloadAlta="/download/produtos/frigobares/fit/zip/imagem-alta.zip" tamanhoAlta="849KB" downloadBaixa="/download/produtos/frigobares/fit/zip/imagem-baixa.zip" tamanhoBaixa="150KB" lamina="/produtos/frigobar/frigobar_fit/lamina/frigobar_fit.pdf" tamanhoLamina="387 KB" />
+		</fotosAdcionais>
+		
+		<fotosAdcionais cor="Titanium">
+			<nomeProduto videoProduto="" tamanhoVideo="" P180="" tamanhoP180="" downloadIMGAlta="" tamanhoIMGAlta="" downloadIMGBaixa="" tamanhoIMGBaixa=""  descritivo="portafechada" alt="Fotos do produto" descAntiga="Frigobar Fit" downloadAlta="/download/produtos/frigobares/fit/zip/imagem-alta.zip" tamanhoAlta="1,28MB" downloadBaixa="/download/produtos/frigobares/fit/zip/imagem-baixa.zip" tamanhoBaixa="287KB" lamina="/produtos/frigobar/frigobar_fit/lamina/frigobar_fit.pdf" tamanhoLamina="387 KB" />
+			<nomeProduto videoProduto="" tamanhoVideo="" P180="" tamanhoP180="" downloadIMGAlta="" tamanhoIMGAlta="" downloadIMGBaixa="" tamanhoIMGBaixa=""  descritivo="portaaberta" alt="Fotos do produto" descAntiga="Frigobar Fit" downloadAlta="/download/produtos/frigobares/fit/zip/imagem-alta.zip" tamanhoAlta="1MB" downloadBaixa="/download/produtos/frigobares/fit/zip/imagem-baixa.zip" tamanhoBaixa="240KB" lamina="/produtos/frigobar/frigobar_fit/lamina/frigobar_fit.pdf" tamanhoLamina="387KB" />
+		</fotosAdcionais>
+	</fotoProduto>	
+	<!-- FOTO DO PRODUTO ( DOWNLOADS  ALTA E BAIXA )-->
+	
+	
+	<!-- DESTAQUES  (INFORMAÇÃO NA LATERAL DIREITA DO PRODUTO) (COLOCAR TÍTULO E A DESCRIÇÃO DA INFORMAÇÃO )  -->
+	<destaques>
+		<infoDestaque titulo="Porta latas carrossel para 6 latas" descricao="Acesse suas bebidas com mais praticidade. Todas as latas ficam em um só local." />
+		<infoDestaque titulo="Chave na porta." descricao="Guarde tudo o que você quiser com segurança." />
+		<infoDestaque titulo="Prateleiras de vidro." descricao="Feitas em vidro, elas são práticas e duráveis. Disponível na versão em Titanium." />
+	</destaques>
+	<!-- DESTAQUES  (INFORMAÇÃO NA LATERAL DIREITA DO PRODUTO) (COLOCAR TÍTULO E A DESCRIÇÃO DA INFORMAÇÃO )  -->
+	
+	
+	<!-- 
+	*************  FIGURA 3D DO PRODUTO  OBS:  ********************************************************** 
+	    COLOCAR APENAS O ENDEREÇO DA PASTA AONDE ESTÁ AMAZENADO O ARQUIVO, CASO O PRODUTOS NÃO TENHA FIGURA 3D 
+		DEIXE O CAMINHO EM BRANCO, O BOTÃO FICARÁ DESABILITADO 
+	*********************************************************************************************************
+	-->
+	<figuraTridimensional caminho="" />
+	<!-- /FIGURA 3D DO PRODUTO  -->
+	
+	
+	<!-- 
+		************* VIDEO PRODUTO  OBS:  ******************************************************************* 
+	    COLOCAR O ENDEREÇO DE ONDE ESTÁ AMAZENADO O ARQUIVO ( FLV ), CASO O PRODUTOS NÃO TENHA VÍDEO
+		DEIXE O CAMINHO EM BRANCO, O BOTÃO FICARÁ DESABILITADO 
+		*********************************************************************************************************
+	-->
+	<video caminho="" />
+	<!-- /VIDEO -->
+	
+	<!-- 
+		************* MANUAL OBS:  ******************************************************************* 
+	    COLOCAR O ENDEREÇO DE ONDE ESTÁ AMAZENADO O ARQUIVO ( PDF ), CASO O PRODUTOS NÃO TENHA MANUAL
+		DEIXE O CAMINHO EM BRANCO, O BOTÃO FICARÁ DESABILITADO 
+		*********************************************************************************************************
+	-->
+	<manual caminho="/produtos/frigobar/frigobar_fit/manual/frigobar_fit.pdf" />
+	<!-- /MANUAL -->
+	
+	
+	<!-- 
+		************* NICHO  OBS:  ******************************************************************* 
+	    COLOCAR O ENDEREÇO DE ONDE ESTÁ AMAZENADA A IMAGEM DO NICHO, CASO O PRODUTOS NÃO TENHA IMAGEM
+		DEIXE O CAMINHO EM BRANCO, O BOTÃO FICARÁ DESABILITADO 
+		*********************************************************************************************************
+	-->
+	<nicho caminho="" />
+	<!-- /NICHO -->
+	
+	
+	<!-- 
+		************* INFORMAÇÔES ADICIONAIS  OBS:  ******************************************************************* 
+	   BASTA COLOCAR O TESTO DA DESCRIÇÃO DENTRO DO CAMPO DESCRIÇÃO, SE HOUVER NECESSIDADE DE AUMENTAR O NÚMERO
+	   DE DESCRIÇÕES É DUPLICAR O "CAMPO" OU DIMINUIR BASTA REMOVER O "CAMPO" 
+		*********************************************************************************************************
+	-->
+	<informacoes>
+		<informacao descricao="Classificação energética A." />
+		<informacao descricao="Baixo consumo de energia." />
+		<informacao descricao="Puxador pocket, integrado a porta." />
+		<informacao descricao="2 chaves acompanham o produto." />
+		<informacao descricao="Gaveta para frutas." />
+		<informacao descricao="Prateleiras aramadas com detalhes na borda para versão branca." />
+		<informacao descricao="Prateleiras de vidro na versão em Titanium." />
+		<informacao descricao="Bandeja para degelo." />
+		<informacao descricao="Compartimento de resfriamento." />
+		<informacao descricao="Prateleiras para PETS." />
+		<informacao descricao="Disponível com acabamento em branco ou titanium." />
+	</informacoes>
+	<!-- INFORMAÇÔES ADICIONAIS -->
+	
+	
+	
+	<!-- 
+		************* ESPECIFICACOES TECNICAS  OBS:  ******************************************************************* 
+	  	ESSES CAMPOS SÃO APRESENTADOS ATRAVÉS DA "TABELA DE ESPECÍFICAÇÕES TÉCNICAS, CADA " CAMPO ÍTEM "   É UMA LINHA
+	  	E CADA " CAMPO " VALOR É UMA COLUNA
+		*********************************************************************************************************
+	-->
+	<titulo valor="" valor2=""/>
+	
+	<item opcao="Cor" valor="Branco" valor2="Titanium" titulo="verdadeiro" />
+	<item opcao="Volume" valor="101,13 L" valor2="101,13 L" />
+	
+	<item opcao="Códigos" valor="#" valor2="#" titulo="verdadeiro" />
+	<item opcao="Código 127V" valor="TAX04Y07BB1" valor2="TAX04Y07BSS1" />
+	<item opcao="Código EAN 127V" valor="789137803 321 8" valor2="789137803 323 2" />
+	<item opcao="Código 220V" valor="TAY04Y07BB1" valor2="TAY04Y07BSS1" />
+	<item opcao="Código EAN 220V" valor="789137803 322 5" valor2="789137803 324 9" />
+	
+	<item opcao="Características técnicas" valor="#" valor2="#" titulo="verdadeiro" />
+	<item opcao="Classificação energética" valor="A" valor2="A" />
+	<item opcao="Consumo de Energia (Kwh/mês)" valor="17.3" valor2="17.3" />
+	
+	<item opcao="Dimensões sem embalagem" valor="#" valor2="#" titulo="verdadeiro" />
+	<item opcao="Altura (cm)" valor="87.5 cm" valor2="87.5 cm" />
+	<item opcao="Largura (cm)" valor="47.5 cm" valor2="47.5 cm" />
+	<item opcao="Profundidade (cm)" valor="53 cm" valor2="53 cm" />
+	<item opcao="Peso Kg" valor="22 kg" valor2="22 kg" />
+	
+	<item opcao="Dimensões com embalagem" valor="#" valor2="#" titulo="verdadeiro" />
+	<item opcao="Altura (cm)" valor="90cm" valor2="90cm" />
+	<item opcao="Largura (cm)" valor="51 cm" valor2="51 cm" />
+	<item opcao="Profundidade (cm)" valor="56.5 cm" valor2="56.5 cm" />
+	<item opcao="Peso Kg" valor="26" valor2="26" />
+	
+	<item opcao="Garantia" valor="1 ano" valor2="1 ano" titulo="verdadeiro" />
+	<!-- ESPECIFICACOES TECNICAS -->
+
+</produto>

@@ -17,7 +17,7 @@ module PeterParser
         end
         
         class Transformation < Block
-            def self.get(origin, descriptor)
+            def self.get(descriptor)
                 transform = Proc.new{|this|
                     if this.class == Array and descriptor == Hash
                         Hash[*this]

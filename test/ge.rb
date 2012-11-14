@@ -3,13 +3,14 @@ require 'peter_parser'
 
 class GEParser < PeterParser::Parser
     include PeterParser::XMLParser
-
+    include PeterParser::LocalFile
+    
     @default_job = {
-        'url' => 'http://www.geeletrodomesticos.com.br/produtos/frigobar/frigobar_fit/frigobar_fit.xml',
+        'url' => './test/assets/ge.xml',
     }
 
     @extractor = R({
-        "tech_spec" => x("//item/@opcao | //item/@valor").to(Hash)
+        "tech_spec" => x("//item/@opcao | //item/@valor").to(Hash),
     },
         partial('tech_spec'){|hash|
             code = nil
@@ -33,5 +34,5 @@ end
 
 if __FILE__ == $0
     require 'pp'
-    pp TestParser.run
+    pp GEParser.run
 end

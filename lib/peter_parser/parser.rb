@@ -44,9 +44,10 @@ module PeterParser
         
         def run()
             prepare()
-            call_hook(:pre_parse)
+            return nil if not call_hook(:check_url)
+            return nil if not call_hook(:pre_parse)
             @result = parse()
-            call_hook(:post_parse)
+            return nil if not call_hook(:post_parse)
             handled = handle()
             
             return handled
